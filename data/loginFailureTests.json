@@ -1,0 +1,14 @@
+{
+    "testcases": [
+        {
+            "username": "wrongusername",
+            "password": "wrongpassword",
+            "expectedErrorMessage": "Wrong credentials"
+        },
+        {
+            "username": "",
+            "password": "",
+            "expectedErrorMessage": "Fields can not be empty"
+        }
+    ]
+}
