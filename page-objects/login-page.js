@@ -5,7 +5,8 @@ class LoginPage {
       this.usernameInput = page.locator('input[id="username"]');
       this.passwordInput = page.locator('input[id="password"]');
       this.signinButton = page.locator('button[id="signin-button"]');
-      this.loginErrorMessage = page.locator('div[class="input-group"].nth(2) h2[id="message"]');
+      this.loginErrorMessageContainer = page.locator('div[class="input-group"]').nth(2);
+      this.loginErrorMessage = this.loginErrorMessageContainer.locator('h2[id="message"]');
     }
   
     async navigate() {

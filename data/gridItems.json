@@ -1,0 +1,67 @@
+{
+    "items": [
+        {
+            "name": "Classic Muzzarella",
+            "price": 8.00,
+            "gridPosition": 1,
+            "imageHref": "images/classic.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Crispy Bacon",
+            "price": 9.00,
+            "gridPosition": 2,
+            "imageHref": "images/bacon.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Baked Rolls x 8",
+            "price": 10.00,
+            "gridPosition": 3,
+            "imageHref": "images/roll.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Garlic Mix",
+            "price": 9.00,
+            "gridPosition": 4,
+            "imageHref": "images/garlicmix.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Margarita",
+            "price": 9.00,
+            "gridPosition": 5,
+            "imageHref": "images/margarita.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Veggie",
+            "price": 8.00,
+            "gridPosition": 6,
+            "imageHref": "images/veggie.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Super Pepperoni",
+            "price": 10.00,
+            "gridPosition": 7,
+            "imageHref": "images/extrapeperoni.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Evergreen Cream",
+            "price": 9.00,
+            "gridPosition": 8,
+            "imageHref": "images/evergreen.png",
+            "buttonText": "Add to Order"
+        },
+        {
+            "name": "Muzzarella BBQ",
+            "price": 9.00,
+            "gridPosition": 9,
+            "imageHref": "images/bbqcheese.png",
+            "buttonText": "Add to Order"
+        }
+    ]
+}

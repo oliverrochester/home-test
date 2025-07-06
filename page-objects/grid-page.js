@@ -2,13 +2,21 @@
 class GridPage {
     constructor(page) {
       this.page = page;
-      this.orderConfirmedMessage = page.locator('div[id="order-confirmation"] h2');
-      this.orderNumberDisplay = page.locator('div[id="order-confirmation"] p[data-id="ordernumber"]');
     }
   
     async navigate() {
-        await this.page.goto('http://localhost:3100/order'); 
+        await this.page.goto('http://localhost:3100/grid'); 
     }
+
+    async getItemNameByIndex(index) {
+        return await this.page.locator(`div[class="grid-container"] div[class="item"].nth(${index}) h4[data-test-id="item-name"] b`)
+    }
+
+    async getItemPriceByIndex(index){
+        return await this.page.locator(`div[class="grid-container"] div[class="item"].nth(${index}) p#item-price`)
+    }
+
+
 
   }
   

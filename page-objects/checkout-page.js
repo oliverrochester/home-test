@@ -21,6 +21,10 @@ class CheckoutPage {
     async navigate() {
         await this.page.goto('http://localhost:3100/checkout');
     }
+
+    async getCartItemCount() {
+      return await this.cartitemCount.textContent();
+    }
   
   }
   
