@@ -73,7 +73,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'docker run --detach -p 3100:3100 automaticbytes/demo-app',
+    command: 'docker run -p 3100:3100 automaticbytes/demo-app',
     url: 'http://localhost:3100',
     reuseExistingServer: !process.env.CI,
   },
