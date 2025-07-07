@@ -19,9 +19,28 @@ Steps to run test:
 
 4. Run Command: npm install
 
-5. Pull the docker image containing the web app 
+5. Start Docker Desktop application
+
+6. Pull the docker image containing the web app 
     Run Command: docker pull automaticbytes/demo-app
 
-6. Run Command: npm test
+7. Run Command: npm test
     - You should start to see tests running in the terminal
+
+
+Test Design Notes:
+
+- Test suite designed using the page object model
+- Some tests designed using data-driven test design to reduce code redundancy
+- Successful login test did not abstract user credentials since it is already public knowledge
+    - Normally would have credentials in a separate file untracked by git
+- Kept tests simple and easy to read by using understandable variable names in each page object model class, and commented test steps
+- Total of 70 tests that run between:
+    - Desktop Chrome
+    - Desktop Firefox
+    - Desktop Webkit
+    - Mobile Google Pixel 5
+    - Mobile IPhone 12
+    - Microsoft Edge
+
 
