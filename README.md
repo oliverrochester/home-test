@@ -35,7 +35,7 @@ Test Design Notes:
 - Successful login test did not abstract user credentials since it is already public knowledge
     - Normally would have credentials in a separate file untracked by git
 - Kept tests simple and easy to read by using understandable variable names in each page object model class, and commented test steps
-- Total of 70 tests that run between:
+- Total of 56 tests that run between:
     - Desktop Chrome
     - Desktop Firefox
     - Desktop Webkit
