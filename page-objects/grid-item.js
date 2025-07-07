@@ -15,8 +15,8 @@ class GridItem {
     }
 
     async getItemPrice() {
-        const itemPriceBefore = await this.itemPriceElement.textContent();
-        return itemPriceBefore.replace('$', '').trim(); // Remove the dollar sign and trim any potential whitespace 
+        const itemPrice = await this.itemPriceElement.textContent();
+        return itemPrice.replace('$', '').trim(); 
     }
 
     async getButtonText() {
