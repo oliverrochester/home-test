@@ -1,17 +1,19 @@
+
 FROM node:24.3.0
-WORKDIR /run-dir
-ENV PW_TEST_HTML_REPORT_OPEN='never'
 
-RUN git clone https://github.com/oliverrochester/home-test.git /run-dir
+WORKDIR /app
 
-RUN cd /run-dir
+COPY package*.json ./
 
 RUN npm install
 
-RUN apt-get update
+RUN npm install playwright
 
-RUN npx playwright install --with-deps
+COPY . .
 
+ENV PORT=3200
 
-RUN npx playwright test
+EXPOSE 3200
+
+CMD ["npm", "test"]
 
