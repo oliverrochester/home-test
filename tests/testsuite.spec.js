@@ -7,7 +7,6 @@ import { OrderPage } from '../page-objects/order-page';
 import { GridPage } from '../page-objects/grid-page';
 import { GridItem } from '../page-objects/grid-item';
 import { SearchPage } from '../page-objects/search-page';
-const creds = require('../credentials.json');
 const loginFailureTestCases = require('../data/loginFailureTests.json')
 const gridData = require('../data/gridItems.json');
 
@@ -25,7 +24,7 @@ test('login test success', async ({ page }) => {
   const homePage = new HomePage(page);
   await loginPage.navigate();
   const responsePromise = page.waitForResponse('**/authenticate');
-  await loginPage.login(creds.userCreds.username, creds.userCreds.password);
+  await loginPage.login('johndoe19', 'supersecret');
   const response = await responsePromise;
   expect(response.status()).toBe(200);
   await expect(page).toHaveURL('http://localhost:3100/home'); 
