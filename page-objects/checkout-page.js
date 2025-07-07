@@ -1,4 +1,4 @@
-// page-objects/LoginPage.js
+
 class CheckoutPage {
     constructor(page) {
       this.page = page;

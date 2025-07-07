@@ -1,4 +1,4 @@
-// page-objects/LoginPage.js
+
 class OrderPage {
     constructor(page) {
       this.page = page;

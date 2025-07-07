@@ -1,4 +1,4 @@
-// page-objects/LoginPage.js
+
 class GridItem {
     constructor(page, itemIndex) {
       this.page = page;

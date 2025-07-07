@@ -1,4 +1,4 @@
-// page-objects/LoginPage.js
+
 class SearchPage {
     constructor(page) {
       this.page = page;
