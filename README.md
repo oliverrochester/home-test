@@ -19,7 +19,7 @@ Steps to run test:
 
 4. Run Command: npm install
 
-5. Start Docker Desktop application
+5. Start Docker Desktop application on your machine
 
 6. Pull the docker image containing the web app 
     Run Command: docker pull automaticbytes/demo-app
