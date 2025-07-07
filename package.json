@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "docker run -p 3100:3100 automaticbytes/demo-app | playwright test",
+    "test": "playwright test",
     "test-ui": "docker run -p 3100:3100 automaticbytes/demo-app | playwright test --ui",
     "test:debug": "playwright test --debug",
     "test:report": "playwright show-report"

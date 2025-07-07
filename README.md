@@ -12,7 +12,7 @@ Steps to run test:
 1. Clone the public git repositiory containing the tests
     cmd: git clone https://github.com/oliverrochester/home-test.git
 
-2. Navigate to the newly cloned directory and open a terminal within that directory
+2. Navigate to the newly cloned home-test directory and open a terminal within that directory
 
 3. Install node version 24.3.0 if not already installed
     Run Command: nvm use 24.3.0
