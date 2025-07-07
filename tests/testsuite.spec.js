@@ -7,6 +7,7 @@ import { OrderPage } from '../page-objects/order-page';
 import { GridPage } from '../page-objects/grid-page';
 import { GridItem } from '../page-objects/grid-item';
 import { SearchPage } from '../page-objects/search-page';
+const searches = require('../data/searches.json');
 const loginFailureTestCases = require('../data/loginFailureTests.json')
 const gridData = require('../data/gridItems.json');
 
@@ -14,12 +15,7 @@ test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);
 });
 
-test.afterEach(async ({ page }) => {
-  console.log(`Finished running ${test.info().title}`);
-})
-
-
-test('login test success', async ({ page }) => {
+test('Login Success', async ({ page }) => {
   const loginPage = new LoginPage(page);
   const homePage = new HomePage(page);
   await loginPage.navigate();
@@ -33,7 +29,7 @@ test('login test success', async ({ page }) => {
 });
 
 //contains tests for incorrect login credentials as well as empty fields
-test('login test failures', async ({ page }) => {
+test('Login Failure A and B', async ({ page }) => {
   const loginPage = new LoginPage(page);
   for (const testCase of loginFailureTestCases.testcases) {
     await loginPage.navigate();
@@ -146,27 +142,17 @@ test('Grid All Items Test', async ({ page }) => {
 
 });
 
-test('Search Success', async ({ page }) => {
+test('Search Success and Search Empty', async ({ page }) => {
   const searchPage = new SearchPage(page);
-  await searchPage.navigate();
-  expect(await searchPage.searchInput).toBeVisible();
-  expect(await searchPage.searchIconButton).toBeVisible();
-  await searchPage.searchInput.fill('Automation');
-  const responsePromise = page.waitForResponse('**/search-engine');
-  await searchPage.searchIconButton.click();
-  const response = await responsePromise;
-  expect(response.status()).toBe(200);
-  expect(await searchPage.getSearchResultText()).toEqual('Found one result for Automation');
-});
-
-test('Search Empty', async ({ page }) => {
-  const searchPage = new SearchPage(page);
-  await searchPage.navigate();
-  expect(await searchPage.searchInput).toBeVisible();
-  expect(await searchPage.searchIconButton).toBeVisible();
-  const responsePromise = page.waitForResponse('**/search-engine');
-  await searchPage.searchIconButton.click();
-  const response = await responsePromise;
-  expect(response.status()).toBe(404);
-  expect(await searchPage.getSearchResultText()).toEqual('Please provide a search word.');
+  for (const search of searches.searches) {
+    await searchPage.navigate();
+    expect(await searchPage.searchInput).toBeVisible();
+    expect(await searchPage.searchIconButton).toBeVisible();
+    const responsePromise = page.waitForResponse('**/search-engine');
+    await searchPage.searchInput.fill(search.searchText);
+    await searchPage.searchIconButton.click();
+    const response = await responsePromise;
+    expect(response.status()).toBe(search.networkResponseCode);
+    expect(await searchPage.getSearchResultText()).toEqual(search.responseText);
+  }
 });

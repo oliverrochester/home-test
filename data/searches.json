@@ -1,0 +1,14 @@
+{
+    "searches": [
+        {
+            "searchText": "Automation",
+            "networkResponseCode": 200,
+            "responseText": "Found one result for Automation"
+        },
+        {
+            "searchText": "",
+            "networkResponseCode": 404,
+            "responseText": "Please provide a search word."
+        }
+    ]
+}
